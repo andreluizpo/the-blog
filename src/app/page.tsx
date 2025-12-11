@@ -17,18 +17,32 @@ export default async function HomePage() {
                     href="#"
                 >
                     <Image
-                        className="group-hover:scale-105 transition"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition"
                         src="/images/bryen_0.png"
                         width={1200}
                         height={720}
                         alt="Título do post"
+                        priority
                     />
                 </Link>
-                <div>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Illum sed asperiores praesentium excepturi labore id iste
-                    nobis dolores ut maxime. Quibusdam, nulla qui debitis
-                    praesentium sint quae ducimus repellat eos.
+                <div className="flex flex-col gap-4 sm:justify-center">
+                    <time
+                        className="text-slate-600 block text-sm/tight"
+                        dateTime="2025-11-12"
+                    >
+                        11/12/2025 14:56
+                    </time>
+
+                    <h1 className="text-2xl/tight font-extrabold sm:text-4xl">
+                        <Link href="#">Lorem ipsum dolor sit amet.</Link>
+                    </h1>
+
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Illum sed asperiores praesentium excepturi labore
+                        id iste nobis dolores ut maxime. Quibusdam, nulla qui
+                        debitis praesentium sint quae ducimus repellat eos.
+                    </p>
                 </div>
             </section>
 
