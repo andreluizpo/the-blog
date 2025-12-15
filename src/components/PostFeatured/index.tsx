@@ -1,5 +1,5 @@
-import { PostHeading } from "../PostHeading";
 import { PostImageCover } from "../PostImageCover";
+import { PostSummary } from "../PostSummary";
 
 export function PostFeatured() {
     const slug = "qualquercoisa";
@@ -20,25 +20,16 @@ export function PostFeatured() {
                 }}
             />
 
-            <div className="flex flex-col gap-4 sm:justify-center">
-                <time
-                    className="text-slate-600 block text-sm/tight"
-                    dateTime="2025-11-12"
-                >
-                    11/12/2025 14:56
-                </time>
-
-                <PostHeading as="h1" url={postLink}>
-                    Lorem ipsum dolor sit amet.
-                </PostHeading>
-
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            <PostSummary
+                postHeading="h1"
+                postLink={postLink}
+                createdAt="11/12/2025 14:56"
+                title="Lorem ipsum dolor sit amet."
+                excerpt="Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Illum sed asperiores praesentium excepturi labore id iste
                     nobis dolores ut maxime. Quibusdam, nulla qui debitis
-                    praesentium sint quae ducimus repellat eos.
-                </p>
-            </div>
+                    praesentium sint quae ducimus repellat eos."
+            />
         </section>
     );
 }
