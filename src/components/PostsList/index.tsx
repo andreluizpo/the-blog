@@ -1,9 +1,9 @@
 import { PostImageCover } from "../PostImageCover";
 import { PostSummary } from "../PostSummary";
-import { findAllPublicPosts } from "@/lib/queries";
+import { findAllPublicPostsCached } from "@/lib/queries";
 
 export async function PostsList() {
-    const posts = await findAllPublicPosts();
+    const posts = await findAllPublicPostsCached();
 
     return (
         <section className="grid grid-cols-1 mb-16 gap-8 sm:grid-cols-2 lg:grid-cols-3">
