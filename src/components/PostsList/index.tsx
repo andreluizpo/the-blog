@@ -26,7 +26,7 @@ export async function PostsList() {
 
                         <PostSummary
                             postHeading="h2"
-                            postLink={post.slug}
+                            postLink={postLink}
                             createdAt={post.createdAt}
                             title={post.title}
                             excerpt={post.excerpt}
