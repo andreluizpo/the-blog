@@ -2,6 +2,7 @@ import { findPostBySlugCached } from "@/lib/queries";
 import Image from "next/image";
 import { PostHeading } from "../PostHeading";
 import { PostDate } from "../PostDate";
+import { SafeMarkdown } from "../SafeMarkedown";
 
 type SinglePostProps = {
     slug: string;
@@ -32,7 +33,7 @@ export async function SinglePost({ slug }: SinglePostProps) {
 
             <p className="mb-4 text-xl text-slate-600">{post.excerpt}</p>
 
-            <div>{post.content}</div>
+            <SafeMarkdown markdown={post.content}></SafeMarkdown>
         </article>
     );
 }
