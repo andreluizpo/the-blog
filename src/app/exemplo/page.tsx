@@ -1,5 +1,7 @@
 import { formatHour } from "@/utils/format-datetime";
 
+export const dynamic = "force-dynamic";
+
 export default function ExemploPage() {
     const hour = formatHour(Date.now());
 
