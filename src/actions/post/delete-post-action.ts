@@ -9,9 +9,9 @@ import { eq } from "drizzle-orm";
 import { revalidateTag } from "next/cache";
 
 export async function deletePostAction(id: string) {
-    // TO DO: checar login do usuário
+    // TODO: checar login do usuário
 
-    // TO DO: remover linhas abaixo
+    // TODO: remover linhas abaixo
     await asyncDelay(2000);
     logColor(String(id));
 
@@ -29,10 +29,10 @@ export async function deletePostAction(id: string) {
         };
     }
 
-    // TO DO: mover esse método para o repositório
+    // TODO: mover esse método para o repositório
     await drizzleDb.delete(postsTable).where(eq(postsTable.id, id));
 
-    // TO DO: revalidateTag ou revalidatePath
+    // TODO: revalidateTag ou revalidatePath
     revalidateTag("posts", "max");
     revalidateTag(`post-${post.slug}`, "max");
 
