@@ -4,7 +4,7 @@ import {
     IMAGE_SERVER_URL,
     IMAGE_UPLOAD_DIRECTORY,
     IMAGE_UPLOADER_MAX_SIZE,
-} from "@/lib/post/constants";
+} from "@/lib/constants";
 import { asyncDelay } from "@/utils/async-delay";
 import { mkdir, writeFile } from "fs/promises";
 import { extname, resolve } from "path";
