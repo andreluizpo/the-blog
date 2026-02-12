@@ -32,7 +32,6 @@ export async function deletePostAction(id: string) {
     // TODO: mover esse método para o repositório
     await drizzleDb.delete(postsTable).where(eq(postsTable.id, id));
 
-    // TODO: revalidateTag ou revalidatePath
     revalidateTag("posts", "max");
     revalidateTag(`post-${post.slug}`, "max");
 
