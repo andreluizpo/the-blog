@@ -1,5 +1,6 @@
 "use server";
 
+import { verifyPassword } from "@/lib/login/manage-login";
 import { asyncDelay } from "@/utils/async-delay";
 
 type LoginActionState = {
@@ -18,15 +19,36 @@ export async function loginAction(state: LoginActionState, formDate: FormData) {
     }
 
     // Dados que o usuário digitou no form
-    const username = formDate.get("username")?.toString() || "";
-    const password = formDate.get("password")?.toString() || "";
+    const username = formDate.get("username")?.toString().trim() || "";
+    const password = formDate.get("password")?.toString().trim() || "";
+
+    if (!username || !password) {
+        return {
+            username: username,
+            error: "Digite o usuário e senha",
+        };
+    }
 
     // Aqui eu checaria se o usuário existe na base de dados
     const isUsernameValid = username === process.env.LOGIN_USER;
-    const isPasswordValid = password === process.env.LOGIN_PASS;
+    const isPasswordValid = await verifyPassword(
+        password,
+        process.env.LOGIN_PASS || "",
+    );
+
+    if (!isUsernameValid || !isPasswordValid) {
+        return {
+            username,
+            error: "Usuário ou senho inválidos",
+        };
+    }
+
+    // TODO: abaixo
+    // Aqui o usuário e a senha são válidos
+    // Criar o cookie e redirecionar a página
 
     return {
-        username: "",
-        error: "",
+        username,
+        error: "USUÁRIO LOGADO COM SUCESSO!",
     };
 }
