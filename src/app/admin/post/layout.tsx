@@ -9,6 +9,7 @@ export default async function AdminPostLayout({
     children,
 }: Readonly<AdminPostLayoutProps>) {
     await requireLoginSessionOrRedirect();
+
     return (
         <>
             <MenuAdmin />
