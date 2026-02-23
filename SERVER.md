@@ -1,5 +1,10 @@
 # Servidor
 
+Os requisitos para deploy vão ser:
+
+- Um servidor linux com IP válido que não mude, com acesso SSH (vou usar Ubuntu 24.04 na Google Cloud Platform)
+- Um domínio que você possa configurar registros de DNS (Registro tipo A já funcionada)
+
 Comandos para iniciar o site do zero.
 
 ```sh
